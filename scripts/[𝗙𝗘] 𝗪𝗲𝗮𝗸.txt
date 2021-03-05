@@ -1,0 +1,5 @@
+for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if v.ClassName == "Part" then
+			v.CustomPhysicalProperties = PhysicalProperties.new(0, 0.3, 0.5)
+		end
+	end

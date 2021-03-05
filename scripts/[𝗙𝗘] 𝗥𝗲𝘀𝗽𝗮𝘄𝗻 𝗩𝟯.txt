@@ -1,0 +1,5 @@
+Character = game:GetService("Players").LocalPlayer.Character
+respawn = 0
+Character.Head.Died:Remove()
+Character:FindFirstChild("Humanoid").BreakJointsOnDeath = false
+Character:FindFirstChild("Humanoid").Health = respawn

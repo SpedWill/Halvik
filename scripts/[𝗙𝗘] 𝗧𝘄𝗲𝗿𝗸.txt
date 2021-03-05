@@ -1,0 +1,17 @@
+repeat
+AnimationId = "179224234"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1111111111111111111111)
+wait(.125)
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+
+local ActiveTracks = Humanoid:GetPlayingAnimationTracks()
+
+for _,v in pairs(ActiveTracks)
+do v:Stop()
+end
+wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0

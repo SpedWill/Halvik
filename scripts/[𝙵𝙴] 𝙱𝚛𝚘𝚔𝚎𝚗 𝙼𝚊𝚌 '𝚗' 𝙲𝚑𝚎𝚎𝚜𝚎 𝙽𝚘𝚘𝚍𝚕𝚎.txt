@@ -1,0 +1,224 @@
+local toolamount = 19 -- Amount of tools you want to get
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local died = false
+local savepos = LocalPlayer.Character.HumanoidRootPart.CFrame
+repeat
+for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") then
+tool.Parent = LocalPlayer
+end
+end
+LocalPlayer.Character:ClearAllChildren()
+local char = Instance.new("Model", workspace)
+char.Name = "character"
+Instance.new("Part", char).Name = "Torso";
+Instance.new("Part", char).Name = "Head";
+Instance.new("Humanoid", char).Name = "Humanoid";
+LocalPlayer.Character = char
+repeat wait() until LocalPlayer.Character
+until #LocalPlayer:GetChildren() - 4 >= toolamount
+for _, char in pairs(workspace:GetChildren()) do
+if char.Name == "character" and char:IsA("Model") then
+char:Destroy()
+end
+end
+repeat wait() until LocalPlayer.Character.HumanoidRootPart
+LocalPlayer.Character.HumanoidRootPart.CFrame = savepos
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+if tool:IsA("Tool") then
+tool.Parent = LocalPlayer.Backpack
+end
+end
+wait()
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+wait()
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.004)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.104)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.204)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.304)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.404)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.504)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.604)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.704)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.804)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,0.904)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.004)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.104)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.204)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.304)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.404)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.504)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.604)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.704)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.804)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.004,0,1)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(1.69,1.784,-10.045)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(1,0,1.904)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+
+
+
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end

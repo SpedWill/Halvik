@@ -1,0 +1,27 @@
+for i=1,5 do
+if game.Players.LocalPlayer.Character.CharacterMesh then
+game.Players.LocalPlayer.Character.CharacterMesh:Remove()
+else
+end
+end
+game.Players.LocalPlayer.Character.Head:FindFirstChildOfClass("Decal"):Remove()
+game.Players.LocalPlayer.Character['Left Leg']:Remove()
+game.Players.LocalPlayer.Character['Right Leg']:Remove()
+game.Players.LocalPlayer.Character['Left Arm']:Remove()
+game.Players.LocalPlayer.Character['Right Arm']:Remove()
+if game.Players.LocalPlayer.Character.Shirt then
+game.Players.LocalPlayer.Character.Shirt:Remove()
+else
+end
+if game.Players.LocalPlayer.Character.Pants then
+game.Players.LocalPlayer.Character.Pants:Remove()
+else
+end
+if game.Players.LocalPlayer.Character["Shirt Graphic"] then
+game.Players.LocalPlayer.Character["Shirt Graphic"]:Remove()
+else
+end
+game.Players.LocalPlayer.Character["Shirt Graphic"]:Remove()
+wait()
+game.Players.LocalPlayer.Character.Head.Mesh:Remove()
+game.Players.LocalPlayer.Character.Humanoid:RemoveAccessories()

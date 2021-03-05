@@ -1,0 +1,12 @@
+Player = ""
+
+for i,v in pairs(game.Players[Victim].Backpack:GetChildren()) do
+if v:IsA("Tool") then
+print(print(i .. " " .. v:GetFullName()))
+end 
+end
+for i,v in pairs(game.Players[Victim].Character:GetChildren()) do
+if v:IsA("Tool") then
+print(print(i .. " " .. v:GetFullName()))
+end 
+end

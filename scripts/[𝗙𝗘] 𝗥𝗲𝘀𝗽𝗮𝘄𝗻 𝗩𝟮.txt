@@ -1,0 +1,10 @@
+local plr = game:GetService("Players").LocalPlayer.Character
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+plr.Archivable = true
+Respawning = plr:Clone()
+Respawning.Parent = workspace
+plr:ClearAllChildren()
+workspace.CurrentCamera.CameraSubject = workspace.Respawning
+wait(5.25)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+Respawning:Destroy()

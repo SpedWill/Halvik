@@ -1,0 +1,66 @@
+Speed = 1
+Spin = 0
+TornadoSpin = 0
+CircleEffect = 0
+StartingAngle = 0 -- Not degrees
+RemoveMesh = false
+Rotation = 0
+Flip = false
+OffsetX = 0
+OffsetY = 0
+OffsetZ = 0
+AntiLag = false
+--[[
+AntiLag if set to true will stop lag for poor devices
+If your device is not poor and can handle it, you do
+not need to touch this option. 
+Note: If you are one of these people,
+you will have to have an exception
+for slower tool animation processing.
+]]
+local Speed_2 = Speed/math.random(3.875,4.125)
+local function backpack()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+end
+local function character()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+end
+game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+if Flip then
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip * CFrame.Angles(math.rad(180),0,0)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip + Vector3.new(0+OffsetX/math.pi,0+OffsetY/math.pi,0+OffsetZ/math.pi)
+else
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip * CFrame.Angles(math.rad(0+Rotation),0,StartingAngle)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip + Vector3.new(0+OffsetX/math.pi,0+OffsetY/math.pi,0+OffsetZ/math.pi)
+end
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Backpack
+if RemoveMesh then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Handle.Mesh:Remove()
+else
+end
+end
+end
+repeat
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Grip = v.Grip * CFrame.Angles(math.rad(Spin*Speed_2),0+TornadoSpin,CircleEffect/16)
+end
+end
+character()
+game:GetService("RunService").RenderStepped:wait()
+backpack()
+if AntiLag then
+game:GetService("RunService").RenderStepped:wait()
+else
+end
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0

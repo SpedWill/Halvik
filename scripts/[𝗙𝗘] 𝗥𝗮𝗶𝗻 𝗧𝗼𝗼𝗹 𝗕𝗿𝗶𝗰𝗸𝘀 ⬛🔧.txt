@@ -1,0 +1,53 @@
+--[[
+Cyclically's FE Rain Tool Bricks V1.1
+After executing the script, please wait until you are able to move your character again.
+https://v3rmillion.net/member.php?action=profile&uid=785986
+]]
+
+local toolamount = 10 -- Amount of tools you want to rain
+
+-- Don't edit script unless you know what you're doing. If you wanna add this into a script, please give credits and message me on discord that you added it in a script at Cyclically#4905
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local runservice = game:GetService("RunService")
+local characters = {}
+LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+LocalPlayer.Character.Archivable = true
+local tempchar = LocalPlayer.Character:Clone()
+tempchar.Parent = workspace
+local savepos = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+local Stepped = runservice.Stepped:Connect(function()
+    workspace.CurrentCamera.CameraSubject = tempchar:FindFirstChild("Humanoid")
+    for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+            tool.Parent = LocalPlayer
+        end
+    end
+    LocalPlayer.Character:ClearAllChildren()
+    local char = Instance.new("Model", workspace)
+    table.insert(characters, char)
+    Instance.new("Humanoid", char)
+    LocalPlayer.Character = char
+    repeat runservice.Stepped:Wait() until LocalPlayer.Character ~= nil
+end)
+repeat runservice.Stepped:Wait() until #LocalPlayer:GetChildren() - 4 - currentamount >= toolamount
+Stepped:Disconnect()
+repeat runservice.Stepped:Wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil
+for _, char in pairs(characters) do
+    char:Destroy()
+end
+tempchar:Destroy()
+for index, tool in pairs(LocalPlayer:GetChildren()) do
+    if tool:IsA("Tool") then
+        runservice.Stepped:Wait()
+        LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(savepos * Vector3.new(math.random(-50, 50), 100 + (index * 20), math.random(-50, 50)))
+        tool.Parent = LocalPlayer.Backpack
+        tool.Parent = LocalPlayer.Character
+        if tool.Handle:FindFirstChild("Mesh") ~= nil then
+            tool.Handle:FindFirstChild("Mesh"):Destroy()
+        end
+        tool.Parent = workspace.Terrain
+    end
+end
+LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos

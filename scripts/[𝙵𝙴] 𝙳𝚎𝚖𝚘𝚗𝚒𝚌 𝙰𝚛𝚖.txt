@@ -1,0 +1,75 @@
+---------------FE Get Spray Paints (Fencing) by Cyclically!---------------
+--Wait for the rapid teleporting thing to stop
+---------------MAIN SCRIPT---------------
+local savepos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(188,3.5,106)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savepos
+wait()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait()
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer
+end
+end
+wait()
+for i = 1, 50 do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(188,3.5,106)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savepos
+wait()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait()
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer
+end
+end
+wait()
+end
+for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+wait()
+---------------FE Fencing Custom Arm by Cyclically---------------
+
+--YOU NEED 10 SPRAY CANS BEFORE YOU RUN!
+
+---------------MAIN SCRIPT---------------
+local LocalPlayer = game:GetService("Players").LocalPlayer
+if LocalPlayer.Character["Left Arm"] then
+LocalPlayer.Character["Left Arm"]:Destroy()
+end
+for index, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+if index == 1 then
+tool.Grip = CFrame.new(-1.30010343, 0.350000024, -2.86178732, 0.059336368, 0, 0.998237967, 0, 1, 0, -0.998237967, 0, 0.059336368)
+elseif index == 2 then
+tool.Grip = CFrame.new(-1.30010295, 0.350000024, -3.26178622, 0.059336368, 0, 0.998237967, 0, 1, 0, -0.998237967, 0, 0.059336368)
+elseif index == 3 then
+tool.Grip = CFrame.new(-1.87390471, 0.435283124, -2.86177993, 0.0419571474, -0.707106769, 0.705860853, 0.0419571474, 0.707106769, 0.705860853, -0.998237967, 0, 0.059336368)
+elseif index == 4 then
+tool.Grip = CFrame.new(-1.87390482, 0.435283065, -3.26178026, 0.0419571474, -0.707106769, 0.705860853, 0.0419571474, 0.707106769, 0.705860853, -0.998237967, 0, 0.059336368)
+elseif index == 5 then
+tool.Grip = CFrame.new(-0.873904228, -1.76471663, -2.86177707, 0.0419571474, -0.707106769, 0.705860853, 0.0419571474, 0.707106769, 0.705860853, -0.998237967, 0, 0.059336368)
+elseif index == 6 then
+tool.Grip = CFrame.new(-0.873904228, -1.76471651, -3.26177669, 0.0419571474, -0.707106769, 0.705860853, 0.0419571474, 0.707106769, 0.705860853, -0.998237967, 0, 0.059336368)
+elseif index == 7 then
+tool.Grip = CFrame.new(-1.37010086, -2.66578412, -1.66177356, 7.07579051e-10, -0.99999994, 1.1903869e-08, 0.0593363643, 1.19248798e-08, 0.998237967, -0.998237967, 0, 0.059336368)
+elseif index == 8 then
+tool.Grip = CFrame.new(-2.39922476, -2.83641481, -1.66177261, 0.0202942304, -0.939692557, 0.341417462, 0.0557579435, 0.342020094, 0.938036859, -0.998237967, 0, 0.059336368)
+elseif index == 9 then
+tool.Grip = CFrame.new(-0.599224091, -2.23641253, -0.461771727, 0.0202942304, -0.939692557, 0.341417462, 0.0557579435, 0.342020094, 0.938036859, -0.998237967, 0, 0.059336368)
+elseif index == 10 then
+tool.Grip = CFrame.new(-0.599223971, -2.23641229, -0.0617717281, 0.0202942304, -0.939692557, 0.341417462, 0.0557579435, 0.342020094, 0.938036859, -0.998237967, 0, 0.059336368)
+end
+if tool.Handle.Mesh then
+tool.Handle.Mesh:Destroy()
+end
+if index <= 10 then
+tool.Parent = LocalPlayer.Character
+end
+wait()
+end

@@ -1,0 +1,36 @@
+--Credit to sked
+--[[
+    Instructions:
+        -To spectate a player type out /e s then a part of their name.
+        -For example if I wanted to spectate JiMmYbOb1221
+        -I would do:
+         /e s jimm
+        -and it would spectate him.
+        -To stop spectating type--[[
+    Instructions:
+        -To spectate a player type out /e s then a part of their name.
+        -For example if I wanted to spectate JiMmYbOb1221
+        -I would do:
+         /e s jimm
+        -and it would spectate him.
+        -To stop spectating type /e s r
+]]
+
+function findplr(plrname)
+    for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+        if plrname:lower() == v.Name:sub(1,plrname:len()):lower() then
+            return v
+        end
+    end
+    return nil
+end
+
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+    if msg:sub(1, 5) == "/e s " and msg ~= "/e s r" then
+        if findplr(msg:sub(6)) then
+            workspace.Camera.CameraSubject = findplr(msg:sub(6)).Character.Humanoid
+        end
+    elseif msg:sub(1, 6) == "/e s r" then
+        workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+    end
+end)

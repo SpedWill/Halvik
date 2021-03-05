@@ -1,0 +1,293 @@
+Draggable = false -- True = Draggable | False = Not draggable
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Music Player Loaded";
+    Text  = "Note: Only you can locally hear the music";
+    Icon = "rbxassetid://936721732";
+    Duration = math.random(4,6);
+    Button1 = "Okay"
+})
+
+-- Objects
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local PlaySubmit = Instance.new("TextButton")
+local AudioID = Instance.new("TextBox")
+local MusicPlayer = Instance.new("TextLabel")
+local StopSubmit = Instance.new("TextButton")
+local PitchSubmit = Instance.new("TextButton")
+local Pitch = Instance.new("TextLabel")
+local DistortSubmit = Instance.new("TextButton")
+local Distort = Instance.new("TextLabel")
+local PitchValue = Instance.new("TextBox")
+local DistortionValue = Instance.new("TextBox")
+local Speed = Instance.new("TextLabel")
+local SpeedValue = Instance.new("TextBox")
+local SpeedSubmit = Instance.new("TextButton")
+local ResetPitchSpeedDistortion = Instance.new("TextButton")
+local MusicPlayer_2 = Instance.new("TextLabel")
+local False = Instance.new("TextButton")
+local True = Instance.new("TextButton")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame.Position = UDim2.new(0.00910931174, 0, 0.578864336, 0)
+Frame.Size = UDim2.new(0, 182, 0, 249)
+Frame.Active = Draggable
+Frame.Draggable = Draggable
+
+PlaySubmit.Name = "PlaySubmit"
+PlaySubmit.Parent = Frame
+PlaySubmit.BackgroundColor3 = Color3.new(0, 1, 0.0666667)
+PlaySubmit.Position = UDim2.new(0.0405219793, 0, 0.333471209, 0)
+PlaySubmit.Size = UDim2.new(0, 75, 0, 26)
+PlaySubmit.Font = Enum.Font.ArialBold
+PlaySubmit.Text = "Play"
+PlaySubmit.TextColor3 = Color3.new(0, 0, 0)
+PlaySubmit.TextScaled = true
+PlaySubmit.TextSize = 14
+PlaySubmit.TextWrapped = true
+
+AudioID.Name = "AudioID"
+AudioID.Parent = Frame
+AudioID.BackgroundColor3 = Color3.new(1, 1, 1)
+AudioID.Position = UDim2.new(0.106456041, 0, 0.20366402, 0)
+AudioID.Size = UDim2.new(0, 142, 0, 22)
+AudioID.Font = Enum.Font.ArialBold
+AudioID.Text = "Audio ID"
+AudioID.TextColor3 = Color3.new(0, 0, 0)
+AudioID.TextScaled = true
+AudioID.TextSize = 14
+AudioID.TextWrapped = true
+
+MusicPlayer.Name = "Music Player"
+MusicPlayer.Parent = Frame
+MusicPlayer.BackgroundColor3 = Color3.new(1, 1, 1)
+MusicPlayer.Size = UDim2.new(0, 182, 0, 36)
+MusicPlayer.Font = Enum.Font.ArialBold
+MusicPlayer.Text = "Music Player"
+MusicPlayer.TextColor3 = Color3.new(0, 0, 0)
+MusicPlayer.TextScaled = true
+MusicPlayer.TextSize = 14
+MusicPlayer.TextWrapped = true
+
+StopSubmit.Name = "StopSubmit"
+StopSubmit.Parent = Frame
+StopSubmit.BackgroundColor3 = Color3.new(1, 0, 0)
+StopSubmit.Position = UDim2.new(0.541560769, 0, 0.333471209, 0)
+StopSubmit.Size = UDim2.new(0, 74, 0, 26)
+StopSubmit.Font = Enum.Font.ArialBold
+StopSubmit.Text = "Stop"
+StopSubmit.TextColor3 = Color3.new(0, 0, 0)
+StopSubmit.TextScaled = true
+StopSubmit.TextSize = 14
+StopSubmit.TextWrapped = true
+
+PitchSubmit.Name = "PitchSubmit"
+PitchSubmit.Parent = Frame
+PitchSubmit.BackgroundColor3 = Color3.new(0, 1, 0.0666667)
+PitchSubmit.Position = UDim2.new(0.0405219793, 0, 0.788832068, 0)
+PitchSubmit.Size = UDim2.new(0, 45, 0, 18)
+PitchSubmit.Font = Enum.Font.ArialBold
+PitchSubmit.Text = "Submit"
+PitchSubmit.TextColor3 = Color3.new(0, 0, 0)
+PitchSubmit.TextScaled = true
+PitchSubmit.TextSize = 14
+PitchSubmit.TextWrapped = true
+
+Pitch.Name = "Pitch"
+Pitch.Parent = Frame
+Pitch.BackgroundColor3 = Color3.new(1, 1, 1)
+Pitch.Position = UDim2.new(0.0405219793, 0, 0.562249005, 0)
+Pitch.Size = UDim2.new(0, 45, 0, 21)
+Pitch.Font = Enum.Font.ArialBold
+Pitch.Text = "Pitch"
+Pitch.TextColor3 = Color3.new(0, 0, 0)
+Pitch.TextScaled = true
+Pitch.TextSize = 14
+Pitch.TextWrapped = true
+
+DistortSubmit.Name = "DistortSubmit"
+DistortSubmit.Parent = Frame
+DistortSubmit.BackgroundColor3 = Color3.new(0, 1, 0.0666667)
+DistortSubmit.Position = UDim2.new(0.695406854, 0, 0.788832068, 0)
+DistortSubmit.Size = UDim2.new(0, 45, 0, 18)
+DistortSubmit.Font = Enum.Font.ArialBold
+DistortSubmit.Text = "Submit"
+DistortSubmit.TextColor3 = Color3.new(0, 0, 0)
+DistortSubmit.TextScaled = true
+DistortSubmit.TextSize = 14
+DistortSubmit.TextWrapped = true
+
+Distort.Name = "Distort"
+Distort.Parent = Frame
+Distort.BackgroundColor3 = Color3.new(1, 1, 1)
+Distort.Position = UDim2.new(0.700901389, 0, 0.562249005, 0)
+Distort.Size = UDim2.new(0, 45, 0, 21)
+Distort.Font = Enum.Font.ArialBold
+Distort.Text = "Distort"
+Distort.TextColor3 = Color3.new(0, 0, 0)
+Distort.TextScaled = true
+Distort.TextSize = 14
+Distort.TextWrapped = true
+
+PitchValue.Name = "PitchValue"
+PitchValue.Parent = Frame
+PitchValue.BackgroundColor3 = Color3.new(1, 1, 1)
+PitchValue.Position = UDim2.new(0.0405219793, 0, 0.681575656, 0)
+PitchValue.Size = UDim2.new(0, 45, 0, 16)
+PitchValue.Font = Enum.Font.ArialBold
+PitchValue.Text = "1"
+PitchValue.TextColor3 = Color3.new(0, 0, 0)
+PitchValue.TextScaled = true
+PitchValue.TextSize = 14
+PitchValue.TextWrapped = true
+
+DistortionValue.Name = "DistortValue"
+DistortionValue.Parent = Frame
+DistortionValue.BackgroundColor3 = Color3.new(1, 1, 1)
+DistortionValue.Position = UDim2.new(0.700901389, 0, 0.681575656, 0)
+DistortionValue.Size = UDim2.new(0, 45, 0, 16)
+DistortionValue.Font = Enum.Font.ArialBold
+DistortionValue.Text = "0"
+DistortionValue.TextColor3 = Color3.new(0, 0, 0)
+DistortionValue.TextScaled = true
+DistortionValue.TextSize = 14
+DistortionValue.TextWrapped = true
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.new(1, 1, 1)
+Speed.Position = UDim2.new(0.370192319, 0, 0.562249005, 0)
+Speed.Size = UDim2.new(0, 45, 0, 21)
+Speed.Font = Enum.Font.ArialBold
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.new(0, 0, 0)
+Speed.TextScaled = true
+Speed.TextSize = 14
+Speed.TextWrapped = true
+
+SpeedValue.Name = "SpeedValue"
+SpeedValue.Parent = Frame
+SpeedValue.BackgroundColor3 = Color3.new(1, 1, 1)
+SpeedValue.Position = UDim2.new(0.370192319, 0, 0.681575656, 0)
+SpeedValue.Size = UDim2.new(0, 45, 0, 16)
+SpeedValue.Font = Enum.Font.ArialBold
+SpeedValue.Text = "1"
+SpeedValue.TextColor3 = Color3.new(0, 0, 0)
+SpeedValue.TextScaled = true
+SpeedValue.TextSize = 14
+SpeedValue.TextWrapped = true
+
+SpeedSubmit.Name = "SpeedSubmit"
+SpeedSubmit.Parent = Frame
+SpeedSubmit.BackgroundColor3 = Color3.new(0, 1, 0.0666667)
+SpeedSubmit.Position = UDim2.new(0.370192319, 0, 0.788832068, 0)
+SpeedSubmit.Size = UDim2.new(0, 45, 0, 18)
+SpeedSubmit.Font = Enum.Font.ArialBold
+SpeedSubmit.Text = "Submit"
+SpeedSubmit.TextColor3 = Color3.new(0, 0, 0)
+SpeedSubmit.TextScaled = true
+SpeedSubmit.TextSize = 14
+SpeedSubmit.TextWrapped = true
+
+ResetPitchSpeedDistortion.Name = "Reset Pitch/Speed/Distortion"
+ResetPitchSpeedDistortion.Parent = Frame
+ResetPitchSpeedDistortion.BackgroundColor3 = Color3.new(0, 1, 0.968628)
+ResetPitchSpeedDistortion.Position = UDim2.new(0.0405219793, 0, 0.909313977, 0)
+ResetPitchSpeedDistortion.Size = UDim2.new(0, 165, 0, 16)
+ResetPitchSpeedDistortion.Font = Enum.Font.ArialBold
+ResetPitchSpeedDistortion.Text = "Reset Pitch/Speed/Distortion"
+ResetPitchSpeedDistortion.TextColor3 = Color3.new(0, 0, 0)
+ResetPitchSpeedDistortion.TextScaled = true
+ResetPitchSpeedDistortion.TextSize = 14
+ResetPitchSpeedDistortion.TextWrapped = true
+
+MusicPlayer_2.Name = "Music Player"
+MusicPlayer_2.Parent = Frame
+MusicPlayer_2.BackgroundColor3 = Color3.new(1, 1, 1)
+MusicPlayer_2.Position = UDim2.new(0.0384615399, 0, 0.461847395, 0)
+MusicPlayer_2.Size = UDim2.new(0, 45, 0, 18)
+MusicPlayer_2.Font = Enum.Font.ArialBold
+MusicPlayer_2.Text = "Loop"
+MusicPlayer_2.TextColor3 = Color3.new(0, 0, 0)
+MusicPlayer_2.TextScaled = true
+MusicPlayer_2.TextSize = 14
+MusicPlayer_2.TextWrapped = true
+
+False.Name = "False"
+False.Parent = Frame
+False.BackgroundColor3 = Color3.new(1, 0, 0)
+False.Position = UDim2.new(0.700901449, 0, 0.461847395, 0)
+False.Size = UDim2.new(0, 45, 0, 18)
+False.Font = Enum.Font.ArialBold
+False.Text = "False"
+False.TextColor3 = Color3.new(0, 0, 0)
+False.TextScaled = true
+False.TextSize = 14
+False.TextWrapped = true
+
+True.Name = "True"
+True.Parent = Frame
+True.BackgroundColor3 = Color3.new(0, 1, 0.0666667)
+True.Position = UDim2.new(0.370192319, 0, 0.461847395, 0)
+True.Size = UDim2.new(0, 45, 0, 18)
+True.Font = Enum.Font.ArialBold
+True.Text = "True"
+True.TextColor3 = Color3.new(0, 0, 0)
+True.TextScaled = true
+True.TextSize = 14
+True.TextWrapped = true
+
+PlaySubmit.MouseButton1Click:connect(function()
+local ClientSound = Instance.new("Sound")
+ClientSound.SoundId = "http://www.roblox.com/asset/?id="..AudioID.Text
+ClientSound.Volume = .5
+ClientSound.Parent = workspace
+ClientSound.PlaybackSpeed = 1
+ClientSound:Play()
+wait()
+ClientSound.Name = "Music_Player"
+end)
+
+StopSubmit.MouseButton1Click:connect(function()
+for i=1,25 do
+workspace["Music_Player"]:Remove()
+wait()
+end
+end)
+
+PitchSubmit.MouseButton1Click:connect(function()
+local PitchShift = Instance.new("PitchShiftSoundEffect", workspace["Music_Player"])
+PitchShift.Octave = PitchValue.Text
+end)
+
+DistortSubmit.MouseButton1Click:connect(function()
+local DistortionLevel = Instance.new("DistortionSoundEffect", workspace["Music_Player"])
+DistortionLevel.Level = DistortionValue.Text
+end)
+
+SpeedSubmit.MouseButton1Click:connect(function()
+workspace["Music_Player"].PlaybackSpeed = SpeedValue.Text
+end)
+
+True.MouseButton1Click:connect(function()
+workspace["Music_Player"].Looped = true
+end)
+
+False.MouseButton1Click:connect(function()
+workspace["Music_Player"].Looped = false
+end)
+
+ResetPitchSpeedDistortion.MouseButton1Click:connect(function()
+workspace["Music_Player"].PlaybackSpeed = 1
+wait()
+workspace["Music_Player"].PitchShiftSoundEffect:Remove()
+wait()
+workspace["Music_Player"].DistortionSoundEffect:Remove()
+end)

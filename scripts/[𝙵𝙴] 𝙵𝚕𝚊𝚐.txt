@@ -1,0 +1,77 @@
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+wait(0.2)
+game.Players.LocalPlayer.Character.Foil.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.Foil.GripForward = Vector3.new(-0.991, 0, 0.137)
+game.Players.LocalPlayer.Character.Foil.GripPos     = Vector3.new(-0.001, 0, -2.307)
+game.Players.LocalPlayer.Character.Foil.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Character.Foil.GripUp      = Vector3.new(0.137, 0, 0.991)
+wait()
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Spray" then
+v:Destroy()
+end
+end
+wait()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Spray" then
+v:Destroy()
+end
+end
+
+wait()
+
+workspace.Handle.CanCollide = false
+workspace.Handle.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame
+wait(0.1)
+workspace.Handle.Position = Vector3.new(187.619995, 0.690000057, 106.145004)
+workspace.Handle.CanCollide = false
+
+game.Players.LocalPlayer.Character:WaitForChild("Spray")
+
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer.Backpack
+wait(0.1)
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait(0.1)
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer
+wait()
+workspace.Handle.CanCollide = false
+workspace.Handle.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame
+wait(0.1)
+workspace.Handle.Position = Vector3.new(187.619995, 0.690000057, 106.145004)
+workspace.Handle.CanCollide = false
+
+game.Players.LocalPlayer.Character:WaitForChild("Spray")
+
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer.Backpack
+wait(0.1)
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer
+wait(0.1)
+game.Players.LocalPlayer.Spray.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Spray.Parent = game.Players.LocalPlayer.Backpack
+wait(0.1)
+game.Players.LocalPlayer.Backpack.Spray.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(0.096, 0.959, -0.267)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-4.44, -1.317, 0)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(-0.027, -0.266, -5.964)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.995, -0.099, 0)
+wait(0.1)
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait(0.1)
+game.Players.LocalPlayer.Backpack.Spray.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(0.096, 0.959, -0.267)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-3.755, -1.317, 0)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(-0.027, -0.266, -5.964)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.995, -0.099, 0)
+wait(0.1)
+
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait(0.2)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.2)
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end

@@ -1,0 +1,301 @@
+local toolamount = 250 -- Amount of tools you want to get
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local died = false
+local savepos = LocalPlayer.Character.HumanoidRootPart.CFrame
+repeat
+for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") then
+tool.Parent = LocalPlayer
+end
+end
+LocalPlayer.Character:ClearAllChildren()
+local char = Instance.new("Model", workspace)
+char.Name = "character"
+Instance.new("Part", char).Name = "Torso";
+Instance.new("Part", char).Name = "Head";
+Instance.new("Humanoid", char).Name = "Humanoid";
+LocalPlayer.Character = char
+repeat wait() until LocalPlayer.Character
+until #LocalPlayer:GetChildren() - 4 >= toolamount
+for _, char in pairs(workspace:GetChildren()) do
+if char.Name == "character" and char:IsA("Model") then
+char:Destroy()
+end
+end
+repeat wait() until LocalPlayer.Character.HumanoidRootPart
+LocalPlayer.Character.HumanoidRootPart.CFrame = savepos
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+if tool:IsA("Tool") then
+tool.Parent = LocalPlayer.Backpack
+end
+end
+wait()
+local x = 10
+
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+   if v:IsA("Tool") then
+      v.GripPos = Vector3.new(0, 0, 0)
+   end 
+end
+
+wait()
+--1
+for i = 1, 15 do
+    game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(x, 5, 0)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+    x = 10
+    --2
+    for i = 1, 15 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(x, -5, 0)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -5
+   --3
+   for i = 1, 25 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(10, x, 0)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = 5
+   --4
+   for i = 1, 8 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(25, x, 0)
+       x = x - 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -2.2
+   
+   --5
+   for i = 1, 8 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(25, x, 0)
+       x = x - 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = 10
+   
+   --6
+   for i = 1, 16 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(x, -5, -5)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = 10
+   
+   --7
+   for i = 1, 16 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(x, 5, -5)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -5
+   --8
+   for i = 1, 25 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(10, x, -5)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -5
+   --9
+   for i = 1, 25 do
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(25, x, -5)
+       x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+    --10
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(4, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --11
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(3.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --12
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(2.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --13
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(1.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --13
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(0.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --14
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(-0.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --15
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(-1.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --16
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(-2.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --17
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(-3.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+   wait()
+   
+   x = -25
+   --18
+    for i = 1, 5 do
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripForward = Vector3.new(0, 1, 50)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").GripPos = Vector3.new(-4.3, 7, x)
+        x = x + 12
+       wait()
+       
+       game.Players.LocalPlayer.Backpack:FindFirstChild("Foil").Parent = game.Players.LocalPlayer.Character
+    end
+   
+
+   
+   wait(0.2)
+   
+   
+   
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+   if v:IsA("Tool") then
+      if v.Handle.Mesh then
+         v.Handle.Mesh:Destroy() 
+      end
+   end 
+end
+wait()
+AnimationId = "188632011"
+Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k.Looped = true
+k:Play()
+k:AdjustSpeed(3)

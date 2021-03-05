@@ -1,0 +1,163 @@
+--Press Z to activate
+--Press X to hold ruler up
+--Press C to slam ruler
+
+plr   = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "c" then
+    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+    wait()
+   
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-0.014, 1, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.05, -0.893, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.004, 0.016, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(1, 0.014, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-0.014, -1, -0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.05, 2.022, 0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.004, -0.016, 1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(1, -0.014, -0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-0.014, -1, -0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.05, 3.011, 0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.004, -0.016, 1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(1, -0.014, -0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-0.014, -1, -0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.05, 3.847, 0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.004, -0.016, 1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(1, -0.014, -0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "x" then
+    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+    wait()
+   
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-1, -0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(0.12, -0.62, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(-0.016, 0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(-0.014, 1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 1.667, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 2.611, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 2.611, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+end
+end)
+
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "z" then
+    wait()
+local Sprayamountx          = 4
+local Sprayamount           = 4
+for i                       = 1,Sprayamount do
+workspace.Handle.CanCollide = false
+workspace.Handle.CFrame     = game.Players.LocalPlayer.Character.Torso.CFrame
+wait()
+workspace.Handle.Position = Vector3.new(187.619995, 0.690000057, 106.145004)
+workspace.Handle.CanCollide = false
+
+game.Players.LocalPlayer.Character:WaitForChild("Spray")
+
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer.Backpack
+
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer
+wait()
+end
+wait()
+for i=1,Sprayamountx do
+game.Players.LocalPlayer.Spray.Parent = game.Players.LocalPlayer.Backpack
+wait()
+end
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(-1, -0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(0.12, -0.62, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(-0.016, 0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(-0.014, 1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 1.667, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 2.611, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.GripForward = Vector3.new(1, 0.014, 0.016)
+game.Players.LocalPlayer.Backpack.Spray.GripPos     = Vector3.new(-0.12, 2.611, -0.081)
+game.Players.LocalPlayer.Backpack.Spray.GripRight   = Vector3.new(0.016, -0.004, -1)
+game.Players.LocalPlayer.Backpack.Spray.GripUp      = Vector3.new(0.014, -1, 0.004)
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+wait()
+for i=1,Sprayamount do
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+end
+
+wait()
+
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+end
+end)

@@ -1,0 +1,15 @@
+for i,v in pairs(game.Lighting:GetDescendants()) do
+if (v:IsA("Tool")) then
+v:Clone().Parent = game.Players.LocalPlayer.Backpack
+end
+end
+for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+if (v:IsA("Tool")) then
+v:Clone().Parent = game.Players.LocalPlayer.Backpack
+end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Press ` for more gears.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ";
+    Text  = "";
+})

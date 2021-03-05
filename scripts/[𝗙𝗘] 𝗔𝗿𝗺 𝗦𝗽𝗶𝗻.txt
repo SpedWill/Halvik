@@ -1,0 +1,33 @@
+Speed = 30 -- Your speed
+
+
+-- 255 is the max
+local function backpack()
+game.Players.LocalPlayer.Character.Arm.Parent = game.Players.LocalPlayer.Backpack
+end
+local function character()
+game.Players.LocalPlayer.Backpack.Arm.Parent = game.Players.LocalPlayer.Character
+end
+if Speed >= 255 then
+Speed = 255
+end
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = 0
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Accessory") then
+local ArmRemove = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+ArmRemove.Name = "Arm"
+v.Handle.Parent = ArmRemove
+ArmRemove.Handle.Massless = true
+repeat
+ArmRemove.Grip = CFrame.new(Vector3.new(1.5,-2.062,0.11875)) * CFrame.Angles(math.rad(-90),0,0)
+character()
+for i=1,360-Speed do
+backpack()
+ArmRemove.Grip = ArmRemove.Grip * CFrame.Angles(math.rad(-1-Speed+1),0,0)
+character()
+wait()
+end
+backpack()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+end
+end

@@ -1,0 +1,12 @@
+Head_Height = 10 -- 54 is max and ranges from 0 to 54
+
+
+_=wait
+AnimationId="121572214"
+A=Instance.new("Animation")
+A.AnimationId="rbxassetid://"..AnimationId
+k=game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("Humanoid"):LoadAnimation(A)
+k:Play()
+k:AdjustSpeed(1)
+_(Head_Height*.0053125)
+k:AdjustSpeed(0)

@@ -1,0 +1,8 @@
+local Message = ""
+
+local anim = Instance.new("Animation", game.Players.LocalPlayer)
+anim.AnimationId = string.rep(Message.." ", 50)
+ 
+local loadanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim):Play()
+wait()
+anim:Destroy()

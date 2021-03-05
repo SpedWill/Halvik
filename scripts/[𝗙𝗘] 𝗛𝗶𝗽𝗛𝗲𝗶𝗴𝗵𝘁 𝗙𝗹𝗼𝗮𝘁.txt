@@ -1,0 +1,7 @@
+HipHeight = "" -- Change to the hipheight you want
+
+
+local b = game.Players.LocalPlayer
+;local c="Humanoid";local d=b
+;local e="Character"
+f = "HipHeight"d[e][c][f]=HipHeight

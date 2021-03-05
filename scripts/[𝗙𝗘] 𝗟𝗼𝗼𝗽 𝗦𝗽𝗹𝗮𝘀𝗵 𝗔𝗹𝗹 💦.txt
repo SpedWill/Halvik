@@ -1,0 +1,3 @@
+repeat for a,b in pairs(game.Players:GetChildren())do 
+b.Character.Head.Splash.Playing = true end;wait()until 
+game.Players.LocalPlayer.Character.Humanoid.Health==0

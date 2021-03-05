@@ -1,0 +1,34 @@
+local function backpack()
+game.Players.LocalPlayer.Character.Arm.Parent = game.Players.LocalPlayer.Backpack
+end
+local function character()
+game.Players.LocalPlayer.Backpack.Arm.Parent = game.Players.LocalPlayer.Character
+end
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = 0
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Accessory") then
+local ArmRemove = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+ArmRemove.Name = "Arm"
+v.Handle.Parent = ArmRemove
+ArmRemove.Handle.Massless = true
+ArmRemove.Grip = CFrame.new(Vector3.new(1.5,-.062,.11875)) * CFrame.Angles(math.rad(90),0,0)
+character()
+wait(.03125)
+for i=1,5 do
+backpack()
+ArmRemove.Grip = ArmRemove.Grip + Vector3.new(-.1,0,0)
+ArmRemove.Grip = ArmRemove.Grip * CFrame.Angles(math.rad(0),.1,0)
+character()
+wait(.03125)
+end
+for i=1,4 do
+backpack()
+ArmRemove.Grip = ArmRemove.Grip + Vector3.new(.1,0,-.2)
+ArmRemove.Grip = ArmRemove.Grip * CFrame.Angles(math.rad(-5),-.1,0)
+character()
+wait(.03125)
+end
+backpack()
+end
+end
+game.Players.LocalPlayer.Backpack.Arm:Destroy()

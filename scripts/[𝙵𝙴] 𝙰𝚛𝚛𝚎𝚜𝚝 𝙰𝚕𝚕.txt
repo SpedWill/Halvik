@@ -1,3 +1,0 @@
-for v,i in pairs(game.Players:GetChildren()) do
-workspace.FE.RemoteEvents.HandcuffArrest:FireServer(i.Name)
-end

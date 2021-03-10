@@ -1,0 +1,7 @@
+plr = game.Players.LocalPlayer.Character.Humanoid
+_=wait
+repeat wait()
+workspace.CurrentCamera.CameraType = Enum.CameraType.Attach
+until plr.Health == 0
+_(math.random(10%5,10%9/2-.45))
+workspace.CurrentCamera.CameraType = Enum.CameraType.Custom

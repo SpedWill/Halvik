@@ -1,0 +1,17 @@
+local noclip = true
+G = game
+char = G.Players.LocalPlayer.Character
+repeat
+if noclip == true then
+for _,v in pairs(char:children()) do
+pcall(function()
+if v.className == "Part" then
+v.CanCollide = false
+elseif v.ClassName == "Model" then
+v.Head.CanCollide = false
+end
+end)
+end
+end
+G:service("RunService").Stepped:wait()
+until char.Humanoid.Health == 0

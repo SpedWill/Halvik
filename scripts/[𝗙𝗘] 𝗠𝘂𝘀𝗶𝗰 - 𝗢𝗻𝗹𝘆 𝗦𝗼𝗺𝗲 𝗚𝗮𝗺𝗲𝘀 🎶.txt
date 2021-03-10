@@ -1,0 +1,52 @@
+MusicID = 2856431782
+ClientTransparentBlock = true -- Others will still see it
+
+--[[Games it works in
+Splitting Point
+Sausage Sizzle
+Human Giraffe
+]]
+
+if game.PlaceId == 2359301056 then
+game.ReplicatedStorage.Boom:FireServer()
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = 0
+if game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox then
+game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox.Parent = game.Players.LocalPlayer.Character
+else
+end
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Mesh:Destroy()
+if ClientTransparentBlock == true then
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Transparency = 1
+elseif ClientTransparentBlock == false then
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Transparency = 0
+end
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Remote:FireServer("PlaySong", MusicID)
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Name = "SuperFlyGoldBoombox"..math.random(.1,1000000)
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+elseif game.PlaceId == 2587171955 or 2711482466 then
+game.ReplicatedStorage.Events.Boom:FireServer()
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = 0
+if game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox then
+game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox.Parent = game.Players.LocalPlayer.Character
+else
+end
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Mesh:Destroy()
+if ClientTransparentBlock == true then
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Transparency = 1
+elseif ClientTransparentBlock == false then
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Handle.Transparency = 0
+end
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Remote:FireServer("PlaySong", MusicID)
+game.Players.LocalPlayer.Character.SuperFlyGoldBoombox.Name = "SuperFlyGoldBoombox"..math.random(.1,1000000)
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+end

@@ -1,0 +1,17 @@
+--Say "tof [message]" then it'll determine if it's true or false
+
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+if msg:sub(1,4) == "tof " then
+local tof = msg:sub(5, #msg)
+local tof2 = math.random(1,2)
+if tof2 == 1 then
+wait(.2)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("True", "All")
+else
+if tof2 == 2 then
+wait(.2)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("False", "All")
+end
+end
+end
+end)

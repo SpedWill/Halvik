@@ -1,0 +1,26 @@
+--[[ Changes your player's FPS | doesn't effect your screen ]]
+FPS_Lag_Rate = "1" -- FPS lag speed
+WalkSpeed = "16" -- WalkSpeed amount
+JumpPower = "50" -- JumpPower amount
+--[[ Over 30 will start to get very laggy ]]
+
+G = game
+plr = G.Players.LocalPlayer.Character
+hrp = plr.HumanoidRootPart
+hrp.CustomPhysicalProperties = PhysicalProperties.new(math.huge,math.huge,math.huge,math.huge,math.huge)
+_ = wait
+FPSLAG = true
+G:GetService('RunService').Stepped:connect(function()
+if FPSLAG then
+FPSLAG = FPS_Lag_Rate
+end
+end)
+plr.Humanoid.WalkSpeed = WalkSpeed
+plr.Humanoid.JumpPower = JumpPower
+_(math.random(0,.001))
+repeat
+plr.Torso.Anchored = true
+_(FPS_Lag_Rate / 200)
+plr.Torso.Anchored = false
+_()
+until plr.Humanoid.Health == 0

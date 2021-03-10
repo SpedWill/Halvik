@@ -1,0 +1,78 @@
+BladeSpeed = 5
+
+
+--[[Cyclically's FE Tool Duplicate Tools V3
+https://v3rmillion.net/member.php?action=profile&uid=785986
+
+%%  Don't touch below unless you know what you're doing  %%
+]]
+
+local Blade_Speed = BladeSpeed/math.random(3.875,4.125)
+local toolamount = math.random(6,7) or math.random(10,11)
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local runservice = game:GetService("RunService")
+local characters = {}
+LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+LocalPlayer.Character.Archivable = true
+local tempchar = LocalPlayer.Character:Clone()
+tempchar.Parent = workspace
+local savepos = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+local renderstepped = runservice.RenderStepped:Connect(function()
+    workspace.CurrentCamera.CameraSubject = tempchar:FindFirstChild("Humanoid")
+    for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+            tool.Parent = LocalPlayer
+        end
+    end
+    LocalPlayer.Character:ClearAllChildren()
+    local char = Instance.new("Model", workspace)
+    table.insert(characters, char)
+    Instance.new("Humanoid", char)
+    LocalPlayer.Character = char
+    repeat runservice.RenderStepped:Wait() until LocalPlayer.Character ~= nil
+end)
+repeat runservice.RenderStepped:Wait() until #LocalPlayer:GetChildren() - 4 - currentamount >= toolamount - 1
+renderstepped:Disconnect()
+repeat runservice.RenderStepped:Wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil
+for _, char in pairs(characters) do
+    char:Destroy()
+end
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+    if tool:IsA("Tool") then
+        tool.Parent = LocalPlayer.Backpack
+    end
+end
+LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
+tempchar:Destroy()
+wait()
+local function backpack()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+end
+local function character()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+end
+
+for i=1,toolamount+1 do
+game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip * CFrame.Angles(math.rad(math.random(.5,4)*i),0,0)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Backpack
+end
+repeat
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Grip = v.Grip * CFrame.Angles(math.rad(15*Blade_Speed),0,0)
+end
+end
+character()
+game:GetService("RunService").RenderStepped:wait()
+backpack()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0

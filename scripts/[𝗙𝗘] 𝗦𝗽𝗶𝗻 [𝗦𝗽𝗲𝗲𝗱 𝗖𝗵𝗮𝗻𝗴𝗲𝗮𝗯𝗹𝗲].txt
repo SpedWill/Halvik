@@ -1,0 +1,12 @@
+Spin_Speed = 50 -- Your Spin Speed | 50 is default | Negatives not supported
+
+_=wait
+AnimationId="188632011"
+A=Instance.new("Animation")
+A.AnimationId = "rbxassetid://"..AnimationId
+k=game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(A)
+repeat
+k:Play()
+k:AdjustSpeed(Spin_Speed/20)
+_(7.03125/Spin_Speed)
+until game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0

@@ -1,0 +1,306 @@
+Fly_Speed = 4 -- How fast you want to fly
+
+workspace.CurrentCamera.CameraSubject = workspace
+wait()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(0,0,0)) * CFrame.Angles(math.rad(0), 3.14159265359 , 0)
+wait()
+workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+
+FreeFly = false
+forward = false
+left = false
+right = false
+back = false
+up = false
+down = false
+game:GetService('RunService').Stepped:connect(function()
+if FreeFly then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == " " then
+FreeFly = true
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == " " then
+FreeFly = false
+end
+end)
+
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "w" then
+FreeFly = true
+forward = true
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+	
+if key == "w" then
+FreeFly = true
+forward = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "a" then
+FreeFly = true
+left = true
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "a" then
+FreeFly = true
+left = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "d" then
+FreeFly = true
+right = true
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "d" then
+FreeFly = true
+right = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "s" then
+FreeFly = true
+back = true
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "s" then
+FreeFly = true
+back = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "e" then
+FreeFly = true
+up = true
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "e" then
+FreeFly = true
+up = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "q" then
+FreeFly = true
+down = true
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "q" then
+FreeFly = true
+down = false
+end
+end)
+repeat
+if forward then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,1*Fly_Speed)
+else
+if left then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(1*Fly_Speed,0,0)
+else
+if right then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(-1*Fly_Speed,0,0)
+else
+if back then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,-1*Fly_Speed)
+else
+if up then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,1*Fly_Speed,0)
+else
+if down then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,-1*Fly_Speed,0)
+end
+end
+end
+end
+end
+end
+wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+wait()
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "w" then
+FreeFly = false
+forward = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+	
+if key == "w" then
+FreeFly = false
+forward = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "a" then
+FreeFly = false
+left = false
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "a" then
+FreeFly = false
+left = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "d" then
+FreeFly = false
+right = false
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "d" then
+FreeFly = false
+right = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "s" then
+FreeFly = false
+back = false
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "s" then
+FreeFly = false
+back = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "e" then
+FreeFly = false
+up = false
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "e" then
+FreeFly = false
+up = false
+end
+end)
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "q" then
+FreeFly = false
+down = false
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+
+if key == "q" then
+FreeFly = false
+down = false
+end
+end)
+local con = game:GetService('RunService').Stepped:connect(function()
+if FreeFly then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+FreeFly = false
+end
+con:disconnect()
+end)

@@ -1,0 +1,198 @@
+--[[
+Requires 2 devices
+How to use:
+You need another device
+
+Open Roblox on another account on that device
+Join the same game
+Change "Admin" to the other device's Roblox account.
+Change "Username" to the device you executed this script in.
+]]
+Admin = "Uctron" -- Admin
+Username = "Gem" -- Your Roblox username
+Prefix = ";"
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."respawn "..Username then
+        randomInteger = 1
+function generateSpawns()
+    Generated = {}
+    for Idx, Val in pairs(workspace:GetDescendants()) do
+        if Val:IsA("SpawnLocation") then
+            table.insert(Generated, Val)
+        end
+    end
+    return Generated
+end
+
+randomInteger = randomInteger + 1
+math.randomseed(os.time() + randomInteger)
+
+generatedTable = generateSpawns()
+randomSpawn = generatedTable[math.random(1, #generatedTable)]
+game:GetService("Players").LocalPlayer.Character["HumanoidRootPart"].CFrame = randomSpawn.CFrame
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."bring "..Username then
+        local me = game.Players.LocalPlayer.Character
+
+local targetplayer = game.Workspace[Admin].HumanoidRootPart
+
+me.HumanoidRootPart.CFrame = CFrame.new(targetplayer.Position.X, targetplayer.Position.Y, targetplayer.Position.Z)
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."kill "..Username then
+       workspace[Username].Humanoid.Health = 0
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."kick "..Username then
+       game.Players[Username]:Kick()
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."sit "..Username then
+        workspace[Username].Humanoid.Sit = true
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."jump "..Username then
+        workspace[Username].Humanoid.Jump = true
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."particle trump "..Username then
+        local a = Instance.new("ParticleEmitter")
+a.Texture = "http://www.roblox.com/asset/?id=378919754"
+a.VelocitySpread = 100
+a.Parent = game.Workspace[Username].Humanoid.Torso
+
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."loopkill "..Username then
+while wait() do
+       workspace[Username]:BreakJoints()
+end
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."faceless "..Username then
+workspace[Username].Head.face:Remove()
+end
+end)
+end
+
+for v,i in pairs(game.Players:GetChildren()) do
+    i.Chatted:connect(function(msg)
+if msg == Prefix.."fly "..Username then
+repeat wait()
+   until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+local mouse = game.Players.LocalPlayer:GetMouse()
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer
+local torso = plr.Character.Torso
+local flying = true
+local deb = true
+local ctrl = {f = 0, b = 0, l = 0, r = 0}
+local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+local maxspeed = 50
+local speed = 0
+
+function Fly()
+local bg = Instance.new("BodyGyro", torso)
+bg.P = 9e4
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+bg.cframe = torso.CFrame
+local bv = Instance.new("BodyVelocity", torso)
+bv.velocity = Vector3.new(0,0.1,0)
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+repeat wait()
+plr.Character.Humanoid.PlatformStand = true
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+speed = speed+.5+(speed/maxspeed)
+if speed > maxspeed then
+speed = maxspeed
+end
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+speed = speed-1
+if speed < 0 then
+speed = 0
+end
+end
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+else
+bv.velocity = Vector3.new(0,0.1,0)
+end
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+until not flying
+ctrl = {f = 0, b = 0, l = 0, r = 0}
+lastctrl = {f = 0, b = 0, l = 0, r = 0}
+speed = 0
+bg:Destroy()
+bv:Destroy()
+plr.Character.Humanoid.PlatformStand = false
+end
+mouse.KeyDown:connect(function(key)
+if key:lower() == "e" then
+if flying then flying = false
+else
+flying = true
+Fly()
+end
+elseif key:lower() == "w" then
+ctrl.f = 1
+elseif key:lower() == "s" then
+ctrl.b = -1
+elseif key:lower() == "a" then
+ctrl.l = -1
+elseif key:lower() == "d" then
+ctrl.r = 1
+end
+end)
+mouse.KeyUp:connect(function(key)
+if key:lower() == "w" then
+ctrl.f = 0
+elseif key:lower() == "s" then
+ctrl.b = 0
+elseif key:lower() == "a" then
+ctrl.l = 0
+elseif key:lower() == "d" then
+ctrl.r = 0
+end
+end)
+Fly()
+end
+end)
+end

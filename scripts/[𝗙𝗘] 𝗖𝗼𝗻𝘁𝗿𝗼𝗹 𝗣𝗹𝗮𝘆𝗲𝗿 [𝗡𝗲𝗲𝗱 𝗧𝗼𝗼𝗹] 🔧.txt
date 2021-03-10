@@ -1,0 +1,112 @@
+local Victim = ""
+
+--[[
+Credit to Cyclically for FE Tool Duplicate Tools V3
+After executing the script, please wait until you are able to move your character again.
+https://v3rmillion.net/member.php?action=profile&uid=785986
+]]
+
+local toolamount = 1
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local runservice = game:GetService("RunService")
+local characters = {}
+LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+LocalPlayer.Character.Archivable = true
+local tempchar = LocalPlayer.Character:Clone()
+tempchar.Parent = workspace
+local savepos = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+local renderstepped = runservice.RenderStepped:Connect(function()
+    workspace.CurrentCamera.CameraSubject = tempchar:FindFirstChild("Humanoid")
+    for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+            tool.Parent = LocalPlayer
+        end
+    end
+    LocalPlayer.Character:ClearAllChildren()
+    local char = Instance.new("Model", workspace)
+    table.insert(characters, char)
+    Instance.new("Humanoid", char)
+    LocalPlayer.Character = char
+    repeat runservice.RenderStepped:Wait() until LocalPlayer.Character ~= nil
+end)
+repeat runservice.RenderStepped:Wait() until #LocalPlayer:GetChildren() - 4 - currentamount >= toolamount - 1
+renderstepped:Disconnect()
+repeat runservice.RenderStepped:Wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil
+for _, char in pairs(characters) do
+    char:Destroy()
+end
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+    if tool:IsA("Tool") then
+        tool.Parent = LocalPlayer.Backpack
+    end
+end
+LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
+tempchar:Destroy()
+wait(.1)
+AnimationId="429730430"
+A=Instance.new("Animation")
+A.AnimationId = "rbxassetid://"..AnimationId
+k=game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(A)
+k:Play()
+k:AdjustSpeed(12)
+wait(.1)
+local me = game.Players.LocalPlayer.Character
+local targetplayer = workspace[Victim].HumanoidRootPart
+me.HumanoidRootPart.CFrame = CFrame.new(targetplayer.Position.X, targetplayer.Position.Y, targetplayer.Position.Z)
+wait(.1)
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.GripPos = Vector3.new(-2.25,1,-100)
+v.GripUp = Vector3.new(0,0,-1)
+end
+end
+wait(.1)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 98
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(9e99, 9e99, 9e99, 9e99, 9e99)
+wait(.7)
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(.1)
+pz = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,10000)
+wait()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Tool")) then
+v.Parent = workspace
+end
+end
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pz
+wait(.1)
+h = game.Players.LocalPlayer.Character.Humanoid
+tracks = h:GetPlayingAnimationTracks()
+for _,x in pairs(tracks)
+do x:Stop()
+end
+wait()
+AnimationId = "33169583"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0)
+wait()
+workspace.CurrentCamera.CameraSubject = workspace[Victim]
+wait()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+game.Players.LocalPlayer.Character.Humanoid.NameDisplayDistance = math.huge
+game.Players.LocalPlayer.Character.Humanoid.HealthDisplayDistance = math.huge
+repeat
+wait()
+until workspace[Victim].Humanoid.Health == 0
+wait()
+if workspace[Victim].Humanoid.Health == 0 then
+workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+end

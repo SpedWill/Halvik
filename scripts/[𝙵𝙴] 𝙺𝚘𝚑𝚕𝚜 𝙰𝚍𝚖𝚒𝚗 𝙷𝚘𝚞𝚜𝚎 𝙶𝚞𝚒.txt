@@ -1,0 +1,191 @@
+-- Objects
+
+local KohlsAdminGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local KAHTitle = Instance.new("TextLabel")
+local Nama = Instance.new("TextBox")
+local Ban = Instance.new("TextButton")
+local Kick = Instance.new("TextButton")
+local Unlock = Instance.new("TextButton")
+local Admin = Instance.new("TextButton")
+local Data = Instance.new("TextBox")
+local Tutup = Instance.new("TextButton")
+
+-- Properties
+
+KohlsAdminGui.Name = "KohlsAdminGui"
+KohlsAdminGui.Parent = game.CoreGui
+
+Frame.Parent = KohlsAdminGui
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.new(0.333333, 1, 0)
+Frame.BackgroundTransparency = 0.20000000298023
+Frame.Position = UDim2.new(0.162679419, 0, 0.222444892, 0)
+Frame.Size = UDim2.new(0, 422, 0, 300)
+Frame.Draggable = true
+
+KAHTitle.Name = "KAHTitle"
+KAHTitle.Parent = Frame
+KAHTitle.BackgroundColor3 = Color3.new(1, 1, 1)
+KAHTitle.BackgroundTransparency = 1
+KAHTitle.Size = UDim2.new(0, 422, 0, 36)
+KAHTitle.Font = Enum.Font.SourceSansBold
+KAHTitle.Text = "KOHLS ADMIN GUI"
+KAHTitle.TextColor3 = Color3.new(0, 0, 0)
+KAHTitle.TextSize = 25
+
+Nama.Name = "Nama"
+Nama.Parent = Frame
+Nama.BackgroundColor3 = Color3.new(0, 0, 0)
+Nama.BorderColor3 = Color3.new(0.333333, 1, 1)
+Nama.BorderSizePixel = 2
+Nama.Position = UDim2.new(0.120853081, 0, 0.156956524, 0)
+Nama.Size = UDim2.new(0, 319, 0, 50)
+Nama.Font = Enum.Font.SourceSansBold
+Nama.Text = "Name of Player"
+Nama.TextColor3 = Color3.new(1, 1, 1)
+Nama.TextSize = 25
+
+Ban.Name = "Ban"
+Ban.Parent = Frame
+Ban.BackgroundColor3 = Color3.new(0, 0, 0)
+Ban.BorderColor3 = Color3.new(0.333333, 1, 1)
+Ban.BorderSizePixel = 2
+Ban.Position = UDim2.new(0.01421801, 0, 0.352753609, 0)
+Ban.Size = UDim2.new(0, 200, 0, 50)
+Ban.Font = Enum.Font.SourceSansBold
+Ban.Text = "Ban"
+Ban.TextColor3 = Color3.new(1, 1, 1)
+Ban.TextSize = 25
+
+Kick.Name = "Kick"
+Kick.Parent = Frame
+Kick.BackgroundColor3 = Color3.new(0, 0, 0)
+Kick.BorderColor3 = Color3.new(0.333333, 1, 1)
+Kick.BorderSizePixel = 2
+Kick.Position = UDim2.new(0.51184833, 0, 0.352753609, 0)
+Kick.Size = UDim2.new(0, 200, 0, 50)
+Kick.Font = Enum.Font.SourceSansBold
+Kick.Text = "Kick"
+Kick.TextColor3 = Color3.new(1, 1, 1)
+Kick.TextSize = 25
+
+Unlock.Name = "Unlock"
+Unlock.Parent = Frame
+Unlock.BackgroundColor3 = Color3.new(0, 0, 0)
+Unlock.BorderColor3 = Color3.new(0.333333, 1, 1)
+Unlock.BorderSizePixel = 2
+Unlock.Position = UDim2.new(0.48815167, 0, 0.569999993, 0)
+Unlock.Size = UDim2.new(0, 199, 0, 50)
+Unlock.Font = Enum.Font.SourceSansBold
+Unlock.Text = "Unlock Workspace"
+Unlock.TextColor3 = Color3.new(1, 1, 1)
+Unlock.TextSize = 25
+
+Admin.Name = "Admin"
+Admin.Parent = Frame
+Admin.BackgroundColor3 = Color3.new(0, 0, 0)
+Admin.BorderColor3 = Color3.new(0.333333, 1, 1)
+Admin.BorderSizePixel = 2
+Admin.Position = UDim2.new(0.48815167, 0, 0.779999971, 0)
+Admin.Size = UDim2.new(0, 198, 0, 50)
+Admin.Font = Enum.Font.SourceSansBold
+Admin.Text = "GET ADMIN!"
+Admin.TextColor3 = Color3.new(1, 1, 1)
+Admin.TextSize = 25
+
+Data.Name = "Data"
+Data.Parent = Frame
+Data.BackgroundColor3 = Color3.new(0, 0, 0)
+Data.BorderColor3 = Color3.new(0.333333, 1, 1)
+Data.BorderSizePixel = 2
+Data.Position = UDim2.new(0.0450236946, 0, 0.569999993, 0)
+Data.Size = UDim2.new(0, 156, 0, 103)
+Data.Font = Enum.Font.SourceSansBold
+Data.Text = "Data"
+Data.TextColor3 = Color3.new(1, 1, 1)
+Data.TextSize = 15
+
+Tutup.Name = "Tutup"
+Tutup.Parent = Frame
+Tutup.BackgroundColor3 = Color3.new(0, 0, 0)
+Tutup.BorderColor3 = Color3.new(0.333333, 1, 1)
+Tutup.BorderSizePixel = 2
+Tutup.Position = UDim2.new(0.876777232, 0, 0, 0)
+Tutup.Size = UDim2.new(0, 52, 0, 36)
+Tutup.Font = Enum.Font.SourceSansBold
+Tutup.Text = "X"
+Tutup.TextColor3 = Color3.new(1, 1, 1)
+Tutup.TextSize = 25
+
+-- ANWARUN SECURITY CODE
+
+Tutup.MouseButton1Down:connect(function()
+Frame.Visible = false
+end)
+
+Unlock.MouseButton1Down:connect(function()
+for i,v in pairs(game.Workspace:GetDescendants()) do
+if v:IsA("Part") then 
+v.Locked = false
+Data.Text = "Unlocked" .. v.Name
+end end
+end)
+
+Admin.MouseButton1Down:connect(function()
+now = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+=
+game.Workspace.Terrain.GameFolder.Admin.Pads['Touch to get admin'].Head.CFrame
+
+wait(0.2)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = now
+end)
+
+function GetPlayer(plrname)
+    for _,player in pairs(game.Players:GetPlayers()) do
+        if plrname:lower() == player.Name:sub(1,plrname:len()):lower() then
+            return player
+        end
+    end
+    return nil
+end
+
+local Banned = {}
+
+Ban.MouseButton1Down:connect(function()
+    local target = GetPlayer(Nama.Text)
+    if target then
+        table.insert(Banned,target.Name)
+        wait(0.5)
+        game.Players.LocalPlayer.Backpack.Delete.delete:FireServer(target)
+Data.Text = "Banned! Player Name :" .. Nama.Text
+print('Banned! Player Name : ',Nama.Text)
+    end
+end)
+
+Kick.MouseButton1Down:connect(function()
+    local target = GetPlayer(Nama.Text)
+    if target then
+        game.Players.LocalPlayer.Backpack.Delete.delete:FireServer(target)
+Data.Text = "Kicked! Player Name :" .. Nama.Text
+print("Kicked! Player Name: ", Nama.Text)
+    end
+end)
+
+game.Players.PlayerAdded:connect(function(plr)
+    for i = 1,#Banned do
+        if Banned[i] == plr.Name then
+            game.Players.LocalPlayer.Backpack.Delete.delete:FireServer(plr)
+        end
+    end
+end)
+
+while true do
+    wait(1)
+    if not game.Players.LocalPlayer.Backpack:FindFirstChild("Delete") then
+        game:GetService'Players':Chat(":btools me")
+    end
+end

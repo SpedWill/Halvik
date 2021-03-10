@@ -1,0 +1,63 @@
+x = 188
+y = 3.5
+z = 106
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+plr = game.Players.LocalPlayer.Character
+plrb = game.Players.LocalPlayer.Backpack
+_ = wait
+G = game
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+plr.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
+_(math.random(.01,.02))
+plr.HumanoidRootPart.CFrame = pos
+workspace.CurrentCamera.CameraType = Enum.CameraType.Track
+repeat game:GetService("RunService").Stepped:wait()
+until plr.Spray
+plr.Spray.Handle.Mesh:Destroy()
+plr.Spray.TextureId = "rbxassetid://38964017"
+plr.Humanoid:UnequipTools()
+plrb.Spray.LocalScript:Remove()
+game:GetService("RunService").Stepped:wait()
+game.Players.LocalPlayer.Backpack.Spray.Name = "Hot Dog"
+game:GetService("RunService").Stepped:wait()
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripForward = Vector3.new(0, -0.996, 0.085)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripPos = Vector3.new(0.622, -0.787, -1.377)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripRight = Vector3.new(-0, -0.085, -0.996)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripUp = Vector3.new(-1, -0, 0)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripForward = Vector3.new(-0.964, 0, -0.267)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripPos = Vector3.new(0.2, -0.25, 0.03)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripRight = Vector3.new(0.267, 0, -0.964)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripUp = Vector3.new(0, 0, 0)
+game:GetService("RunService").Stepped:wait()
+game.Players.LocalPlayer.Backpack["Hot Dog"].Activated:connect(function()
+game.Players.LocalPlayer.Character["Hot Dog"].Handle.Sound.Playing = true
+game:GetService("RunService").Stepped:wait()
+plr.Humanoid:UnequipTools()
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripForward = Vector3.new(0, -0.996, 0.085)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripPos = Vector3.new(0.622, -0.787, -1.377)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripRight = Vector3.new(-0, -0.085, -0.996)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripUp = Vector3.new(-1, -0, 0)
+game.Players.LocalPlayer.Backpack["Hot Dog"].Parent = game.Players.LocalPlayer.Character
+wait(.2)
+game.Players.LocalPlayer.Character["Hot Dog"].Handle.Sound.Playing = false
+wait(.4)
+plr.Humanoid:UnequipTools()
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripForward = Vector3.new(-0.964, 0, -0.267)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripPos = Vector3.new(0.2, -0.25, 0.03)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripRight = Vector3.new(0.267, 0, -0.964)
+game.Players.LocalPlayer.Backpack["Hot Dog"].GripUp = Vector3.new(0, 0, 0)
+game.Players.LocalPlayer.Backpack["Hot Dog"].Parent = game.Players.LocalPlayer.Character
+end)
+G:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Hot Dog Gained";
+    Text  = "                  Press 2";
+    Icon = "rbxassetid://38964017";
+    Duration = 2;
+})
+ClientSound = Instance.new("Sound")
+ClientSound.Name = "Sound"
+ClientSound.SoundId = "http://www.roblox.com/asset/?id=138084646"
+ClientSound.Volume = .5
+ClientSound.Parent = game.Workspace
+ClientSound:Play()
+print(game.Players.LocalPlayer.Character.Name.." has gained a Hot Dog.")

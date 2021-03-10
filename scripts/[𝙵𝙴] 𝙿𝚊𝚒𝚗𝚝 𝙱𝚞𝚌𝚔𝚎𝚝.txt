@@ -1,0 +1,4 @@
+workspace.FE.RemoteEvents.Accessories:FireServer("Hat", 18474459)
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.PaintBucket
+game.Players.LocalPlayer.Character.PaintBucket.Parent = game.Players.LocalPlayer.Backpack

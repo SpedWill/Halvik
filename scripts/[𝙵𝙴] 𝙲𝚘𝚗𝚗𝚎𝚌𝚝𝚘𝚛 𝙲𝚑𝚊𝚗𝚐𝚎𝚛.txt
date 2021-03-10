@@ -1,0 +1,21 @@
+-- Options: Rope, Spring, Rod
+-- Rainbow can be set to true or false
+
+local Connector     = "" -- Change to an option
+local ArmConnector  = "" -- Change to an option
+local HeadConnector = "" -- Change to an option
+local RainbowConnector = false
+
+local Xarmstring    = ArmConnector.."Arms"
+local Xheadstring   = HeadConnector.."Head"
+local Xstring       = "To"..Connector
+local connectordata = game.ReplicatedStorage
+connectordata[Xstring]:FireServer()
+connectordata[Xarmstring]:FireServer()
+connectordata[Xheadstring]:FireServer()
+if RainbowConnector then
+repeat
+connectordata.Color:FireServer("Rainbow, LocalPlayer")
+game:GetService("RunService").RenderStepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+end

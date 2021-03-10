@@ -1,0 +1,16 @@
+repeat
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local plr = game:GetService("Players").LocalPlayer.Character
+plr.Archivable = true
+Respawning = plr:Clone()
+Respawning.Parent = workspace
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+workspace.CurrentCamera.CameraSubject = workspace.Respawning
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-461.8,386.965,80.668)
+wait(.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+Respawning:Destroy()
+wait(2)
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0

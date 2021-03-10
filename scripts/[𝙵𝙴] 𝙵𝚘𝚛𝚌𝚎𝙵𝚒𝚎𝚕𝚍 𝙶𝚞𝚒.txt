@@ -1,0 +1,110 @@
+--[[ The ForceField will not show in lots of games
+or will sometimes disappear or reappear
+but will show in quite a few games as well.
+You will still not be able to die if there is
+no ForceField on your character.
+Press x to remove the gui.
+If it stops working, execute the script again.
+Note: Some tools will be buggy in certain
+games when the ForceField is running
+]]
+
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "x" then
+game.CoreGui.ScreenGui:Destroy()
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == " " then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(3)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyUp:connect(function(key)
+if key == " " then
+jumping = false
+end
+end)
+
+FF = false
+
+-- Objects
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.0941177, 0.0941177, 0.0941177)
+Frame.Position = UDim2.new(0.692307711, 0, 0.771293402, 0)
+Frame.Size = UDim2.new(0, 269, 0, 68)
+Frame.Active = true
+Frame.Draggable = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton.Size = UDim2.new(0, 131, 0, 61)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "ForceField"
+TextButton.TextColor3 = Color3.new(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton_2.Position = UDim2.new(0.513011158, 0, 0, 0)
+TextButton_2.Size = UDim2.new(0, 131, 0, 61)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "No ForceField"
+TextButton_2.TextColor3 = Color3.new(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14
+TextButton_2.TextWrapped = true
+
+TextButton.MouseButton1Click:connect(function()
+FF = true
+end)
+
+TextButton_2.MouseButton1Click:connect(function()
+FF = false
+wait()
+xos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait(4.85)
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+workspace.CurrentCamera.CameraType = Enum.CameraType.Track
+wait(.4)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = xos
+end)
+
+while wait() do
+if FF then
+game.Players.LocalPlayer.Character.Humanoid.Name = 1
+local l = game.Players.LocalPlayer.Character["1"]:Clone()
+l.Parent = game.Players.LocalPlayer.Character
+l.Name = "Humanoid"
+wait()
+game.Players.LocalPlayer.Character["1"]:Destroy()
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+wait()
+game.Players.LocalPlayer.Character.Animate.Disabled = false
+game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+wait(4.85)
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait(.4)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+workspace.CurrentCamera.CameraType = Enum.CameraType.Track
+end
+end

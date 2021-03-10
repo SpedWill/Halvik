@@ -1,0 +1,313 @@
+--Cyclically's FE Tool Duplicate Tools V3
+--https://v3rmillion.net/member.php?action=profile&uid=785986
+
+local toolamount = 128 -- Amount of tools you want to get
+
+-- Don't edit script unless you know what you're doing. If you wanna add this into a script, please give credits and message me on discord that you added it in a script at Cyclically#4905
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local runservice = game:GetService("RunService")
+local characters = {}
+LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+LocalPlayer.Character.Archivable = true
+local tempchar = LocalPlayer.Character:Clone()
+tempchar.Parent = workspace
+local savepos = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+local renderstepped = runservice.RenderStepped:Connect(function()
+    workspace.CurrentCamera.CameraSubject = tempchar:FindFirstChild("Humanoid")
+    for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+            tool.Parent = LocalPlayer
+        end
+    end
+    LocalPlayer.Character:ClearAllChildren()
+    local char = Instance.new("Model", workspace)
+    table.insert(characters, char)
+    Instance.new("Humanoid", char)
+    LocalPlayer.Character = char
+    repeat runservice.RenderStepped:Wait() until LocalPlayer.Character ~= nil
+end)
+repeat runservice.RenderStepped:Wait() until #LocalPlayer:GetChildren() - 4 - currentamount >= toolamount
+renderstepped:Disconnect()
+repeat runservice.RenderStepped:Wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil
+for _, char in pairs(characters) do
+    char:Destroy()
+end
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+    if tool:IsA("Tool") then
+        tool.Parent = LocalPlayer.Backpack
+    end
+end
+LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
+tempchar:Destroy()
+wait()
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(40, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(39, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(38, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(37, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(36, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(35, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(34, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(33, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(32, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(31, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(30, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(29, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(28, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(27, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(26, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(25, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(24, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(23, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(22, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(21, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(20, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(19, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(18, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(17, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(16, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(15, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(14, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(13, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(12, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(11, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(10, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(9, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(8, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(7, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(6, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(5, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(4, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(3, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(2, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(1, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(0, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-1, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-2, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-3, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-4, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-5, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-6, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-7, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-8, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-9, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-10, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-11, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-12, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-13, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-14, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-15, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-16, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-17, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-18, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-19, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-20, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-21, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-22, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-23, 3.5, 1)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(40, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(39, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(38, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(37, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(36, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(35, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(34, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(33, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(32, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(31, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(30, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(29, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(28, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(27, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(26, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(25, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(24, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(23, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(22, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(21, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(20, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(19, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(18, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(17, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(16, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(15, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(14, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(13, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(12, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(11, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(10, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(9, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(8, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(7, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(6, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(5, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(4, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(3, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(2, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(1, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(0, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-1, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-2, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-3, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-4, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-5, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-6, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-7, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-8, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-9, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-10, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-11, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-12, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-13, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-14, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-15, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-16, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-17, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-18, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-19, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-20, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-21, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-22, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Foil.Grip = CFrame.new(Vector3.new(-23, 3.5, 6)) * CFrame.Angles(math.rad(-1), 0 , 0)
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+wait()
+p = workspace[game.Players.LocalPlayer.Name]:GetChildren()
+for i = 1,#p do
+if (p[i].Name=="Foil") then
+local t = p[i]:FindFirstChild("Handle") 
+if (t ~= nil) then
+local m = t:FindFirstChild("Mesh")
+if (m~= nil) then
+m:Destroy()
+end 
+end 
+end 
+end

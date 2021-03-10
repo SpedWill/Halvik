@@ -1,0 +1,8 @@
+repeat
+workspace.FE.RemoteEvents.Accessories:FireServer("Hat", 1158416)
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.GreenPumpkinHead
+game.Players.LocalPlayer.Character.GreenPumpkinHead.Handle.Mesh:Destroy()
+game.Players.LocalPlayer.Character.GreenPumpkinHead.Parent = workspace
+game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0

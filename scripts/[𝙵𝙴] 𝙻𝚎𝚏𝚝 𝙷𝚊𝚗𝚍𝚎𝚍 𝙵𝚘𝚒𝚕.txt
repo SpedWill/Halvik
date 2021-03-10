@@ -1,0 +1,106 @@
+-- Press - to equip
+-- Press = to unequip
+Tool = false
+if Tool == true then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+AnimationId = "183294396"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0)
+k:AdjustSpeed(1)
+wait()
+k:AdjustSpeed(0)
+end
+if Tool == false then
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+h = game.Players.LocalPlayer.Character.Humanoid
+tracks = h:GetPlayingAnimationTracks()
+for _,x in pairs(tracks)
+do x:Stop()
+end
+end
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Foil.GripPos = Vector3.new(1.5,3,-3.625)
+game.Players.LocalPlayer.Character.Foil.GripUp = Vector3.new(-1,0,0)
+wait()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait()
+game.Players.LocalPlayer.Backpack.Foil.Parent = game.Players.LocalPlayer.Character
+wait()
+AnimationId = "183294396"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0)
+k:AdjustSpeed(1)
+wait()
+k:AdjustSpeed(0)
+game:GetService("Players").LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = 0
+for _, hat in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if hat:IsA("Accessory") then
+local newtool = Instance.new("Tool", game:GetService("Players").LocalPlayer.Backpack)
+newtool.Name = "Arm"
+hat.Handle.Parent = newtool
+wait()
+newtool.Handle.Massless = true
+wait()
+game:GetService("RunService").Stepped:connect(function()
+newtool.GripUp = Vector3.new(0,0,-1)
+newtool.GripPos = Vector3.new(1.5,-3.062,.11875)
+end)
+end
+end
+wait()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait()
+h = game.Players.LocalPlayer.Character.Humanoid
+tracks = h:GetPlayingAnimationTracks()
+for _,x in pairs(tracks)
+do x:Stop()
+end
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "-" then
+Tool = true
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+AnimationId = "183294396"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0)
+k:AdjustSpeed(1)
+wait()
+k:AdjustSpeed(0)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "=" then
+Tool = false
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+h = game.Players.LocalPlayer.Character.Humanoid
+tracks = h:GetPlayingAnimationTracks()
+for _,x in pairs(tracks)
+do x:Stop()
+end
+end
+end)

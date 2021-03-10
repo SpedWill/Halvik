@@ -1,0 +1,117 @@
+Item_Spam = "Both"
+--[[Options: Pepperoni Pizza, Two Liter Koala Cola, Both]]
+Lag_Reduce = false -- Set to true if your device is too slow for the script
+
+if Lag_Reduce == false then
+if Item_Spam == "Pepperoni Pizza" then
+repeat
+workspace.Events.Send:FireServer("Pepperoni Pizza","bdbda","82636382362863823628")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Pepperoni Pizza"]
+game.Players.LocalPlayer.Backpack["Pepperoni Pizza"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Pepperoni Pizza"].Parent = workspace.Terrain
+game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+elseif Item_Spam == "Two Liter Koala Cola" then
+repeat
+workspace.Events.Send:FireServer("Two Liter Koala Cola","abbad","63828263362836288263")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"]
+game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Two Liter Koala Cola"].Parent = workspace.Terrain
+game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+elseif Item_Spam == "Both" then
+repeat
+workspace.Events.Send:FireServer("Pepperoni Pizza","bdbda","82636382362863823628")
+workspace.Events.Send:FireServer("Two Liter Koala Cola","abbad","63828263362836288263")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Pepperoni Pizza"] and game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"]
+game.Players.LocalPlayer.Backpack["Pepperoni Pizza"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Pepperoni Pizza"].Parent = workspace.Terrain
+game.Players.LocalPlayer.Character["Two Liter Koala Cola"].Parent = workspace.Terrain
+game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+end
+elseif Lag_Reduce == true then
+if Item_Spam == "Pepperoni Pizza" then
+repeat
+workspace.Events.Send:FireServer("Pepperoni Pizza","bdbda","82636382362863823628")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Pepperoni Pizza"]
+game.Players.LocalPlayer.Backpack["Pepperoni Pizza"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Pepperoni Pizza"].Parent = workspace.Terrain
+wait(.15)
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+elseif Item_Spam == "Two Liter Koala Cola" then
+repeat
+workspace.Events.Send:FireServer("Two Liter Koala Cola","abbad","63828263362836288263")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"]
+game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Two Liter Koala Cola"].Parent = workspace.Terrain
+wait(.15)
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+elseif Item_Spam == "Both" then
+repeat
+workspace.Events.Send:FireServer("Pepperoni Pizza","bdbda","82636382362863823628")
+workspace.Events.Send:FireServer("Two Liter Koala Cola","abbad","63828263362836288263")
+repeat game:GetService("RunService").Stepped:wait()
+until game.Players.LocalPlayer.Backpack["Pepperoni Pizza"] and game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"]
+game.Players.LocalPlayer.Backpack["Pepperoni Pizza"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack["Two Liter Koala Cola"].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character["Pepperoni Pizza"].Parent = workspace.Terrain
+game.Players.LocalPlayer.Character["Two Liter Koala Cola"].Parent = workspace.Terrain
+wait(.15)
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = workspace.Terrain
+end
+end
+end
+end
+end

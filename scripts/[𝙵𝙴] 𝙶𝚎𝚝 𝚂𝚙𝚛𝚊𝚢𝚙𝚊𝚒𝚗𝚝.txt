@@ -1,0 +1,10 @@
+x = 188
+y = 3.5
+z = 106
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+plr = game.Players.LocalPlayer.Character
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+plr.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
+wait()
+plr.HumanoidRootPart.CFrame = pos
+workspace.CurrentCamera.CameraType = Enum.CameraType.Track

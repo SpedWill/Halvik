@@ -1,0 +1,121 @@
+Rapid_Fire_Speed = 3
+Tool_Name = ""
+Aim_Setting = true
+Hide_Inventory = false
+--[[
+Scroll down for more info
+
+            Crossroads Tool_Name options:
+                    PaintballGun
+                   RocketLauncher
+                     Slingshot
+                     Superball
+                       Sword
+                      Timebomb
+                       Trowel
+
+    If Aim_Setting is set to true, you can click
+      to set the direction of where the tools
+  are spamming. If set to false, you cannot do this
+
+For Rapid_Fire_Speed, anything over 40 is pretty much the max
+
+For Hide_Inventory, if set to true, will keep the script secret ;)
+
+%%% Dupetools V3 by Cyclically %%%
+https://v3rmillion.net/member.php?action=profile&uid=785986
+
+%%  Don't touch below unless you know what you're doing  %%
+]]
+
+local Rapid_Fire_Speed_2 = Rapid_Fire_Speed
+local toolamount = 14
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local runservice = game:GetService("RunService")
+local characters = {}
+LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+LocalPlayer.Character.Archivable = true
+local tempchar = LocalPlayer.Character:Clone()
+tempchar.Parent = workspace
+local savepos = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+local stepped = runservice.Stepped:Connect(function()
+    workspace.CurrentCamera.CameraSubject = tempchar:FindFirstChild("Humanoid")
+    for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+            tool.Parent = LocalPlayer
+        end
+    end
+    LocalPlayer.Character:ClearAllChildren()
+    local char = Instance.new("Model", workspace)
+    table.insert(characters, char)
+    Instance.new("Humanoid", char)
+    LocalPlayer.Character = char
+    repeat runservice.Stepped:Wait() until LocalPlayer.Character ~= nil
+end)
+repeat runservice.Stepped:Wait() until #LocalPlayer:GetChildren() - 4 - currentamount >= toolamount - 1
+stepped:Disconnect()
+repeat runservice.Stepped:Wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil
+for _, char in pairs(characters) do
+    char:Destroy()
+end
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+    if tool:IsA("Tool") then
+        tool.Parent = LocalPlayer.Backpack
+    end
+end
+LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
+tempchar:Destroy()
+if Hide_Inventory == true then
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+else
+if Hide_Inventory == false then
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+end
+end
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+if v.Name == Tool_Name then
+else
+v:Remove()
+end
+end
+end
+if Aim_Setting == true then
+repeat
+game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character[Tool_Name]:Activate()
+if Rapid_Fire_Speed >= 30 then
+game:GetService("RunService").RenderStepped:wait()
+else
+if Rapid_Fire_Speed_2 >= 40 then
+game:GetService("RunService").Stepped:wait()
+else
+wait(1/Rapid_Fire_Speed)
+end
+end
+game.Players.LocalPlayer.Character[Tool_Name].Parent = game.Players.LocalPlayer
+game.Players.LocalPlayer[Tool_Name].Parent = game.Players.LocalPlayer.Backpack
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+else
+if Aim_Setting == false then
+repeat
+game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character[Tool_Name]:Activate()
+game.Players.LocalPlayer.Character[Tool_Name].Parent = game.Players.LocalPlayer
+if Rapid_Fire_Speed >= 30 then
+game:GetService("RunService").RenderStepped:wait()
+else
+if Rapid_Fire_Speed_2 >= 40 then
+game:GetService("RunService").Stepped:wait()
+else
+wait(1/Rapid_Fire_Speed)
+end
+end
+game.Players.LocalPlayer[Tool_Name].Parent = game.Players.LocalPlayer.Backpack
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+end
+end
+LocalPlayer.Character:ClearAllChildren()
+wait(5.25)
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)

@@ -1,0 +1,43 @@
+Victim = "" -- Put the player's name here
+
+--Please wait before you are able to move your character again
+
+camera = true
+game:GetService("RunService").Stepped:connect(function()
+if camera then
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+end
+end)
+pos = LocalPlayer.Character.HumanoidRootPart.CFrame
+LocalPlayer.Character.Archivable = true
+Respawning = LocalPlayer.Character:Clone()
+Respawning.Parent = workspace
+for v,i in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+i.Transparency = 1
+end
+for v,i in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if i:IsA("Accessory") then
+i.Handle.Transparency = 1
+end
+end
+LocalPlayer.Character.Head:FindFirstChildOfClass("Decal"):Destroy()
+workspace.CurrentCamera.CameraSubject = workspace.Respawning
+runservice = game:GetService("RunService")
+hat = game.ReplicatedStorage.ClothingService
+hat:FireServer("Hat", 1527622)
+game.Players:Chat("/name ")
+repeat runservice.Stepped:wait()
+until LocalPlayer.Character.BunnyEarsOfCaprice
+repeat
+LocalPlayer.Character.BunnyEarsOfCaprice.Handle.Transparency = 1
+runservice.Stepped:wait()
+LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Victim].Character.HumanoidRootPart.CFrame
+until LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0
+wait()
+camera = false
+wait(4.5)
+workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+wait(1.5)
+LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+Respawning:Destroy()
+game.Players:Chat("/name "..LocalPlayer.Name)

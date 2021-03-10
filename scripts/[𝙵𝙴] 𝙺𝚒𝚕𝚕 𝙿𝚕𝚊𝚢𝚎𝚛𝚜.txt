@@ -1,0 +1,68 @@
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "nil"
+wait()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+noclip = true
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(9e99, 9e99, 9e99, 9e99, 9e99)
+wait()
+local Sprayamount = 5
+for i=1,Sprayamount do
+workspace.Handle.CanCollide = false
+workspace.Handle.CFrame     = game.Players.LocalPlayer.Character.Torso.CFrame
+wait()
+workspace.Handle.Position = Vector3.new(187.619995, 0.690000057, 106.145004)
+workspace.Handle.CanCollide = false
+wait()
+game.Players.LocalPlayer.Character:WaitForChild("Spray")
+wait()
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer.Backpack
+wait()
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Character.Spray.Parent = game.Players.LocalPlayer
+wait()
+end
+wait()
+for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+wait()
+for i=1,Sprayamount do
+game.Players.LocalPlayer.Backpack:FindFirstChild("Spray").GripPos = Vector3.new(100000000000000,100000000000000,100000000000000)
+end
+wait()
+for i=1,Sprayamount do
+game.Players.LocalPlayer.Backpack:FindFirstChild("Spray").CanCollide = false
+end
+wait()
+for i=1,Sprayamount do
+game.Players.LocalPlayer.Backpack:FindFirstChild("Spray").Transparency = 1
+end
+wait()
+for i=1,Sprayamount do
+game.Players.LocalPlayer.Backpack:FindFirstChild("Spray").Size = Vector3.new(math.huge,math.huge,math.huge)
+end
+wait()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Tool")) then
+    v.GripPos = Vector3.new(0, 0, 99.1)
+end
+end
+wait()
+for i=1,1 do
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+end
+wait()
+repeat
+noclip = true
+wait()
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+wait()
+noclip = false

@@ -1,0 +1,35 @@
+local amount = 10
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local spray = workspace.Handle
+local savecframe = spray.CFrame
+LocalPlayer.Character.Humanoid:UnequipTools()
+local currentamount = #LocalPlayer.Backpack:GetChildren()
+spray.CanCollide = false
+spray.Transparency = 1
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://188632011"
+local loadanim = LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+loadanim.Looped = true
+loadanim:Play()
+loadanim:AdjustSpeed(4)
+for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+tool.Parent = LocalPlayer
+end
+repeat
+repeat
+spray.CFrame = LocalPlayer.Character.Torso.CFrame
+game:GetService("RunService").Stepped:wait()
+until LocalPlayer.Character:FindFirstChild("Spray") ~= nil
+LocalPlayer.Character:FindFirstChild("Spray").Parent = LocalPlayer
+until #LocalPlayer:GetChildren() - 4 - currentamount >= amount
+loadanim:Stop()
+anim:Destroy()
+for _, tool in pairs(LocalPlayer:GetChildren()) do
+if tool:IsA("Tool") then
+tool.Parent = LocalPlayer.Backpack
+end
+end
+spray.CFrame = savecframe
+spray.CanCollide = true
+spray.Transparency = 0

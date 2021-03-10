@@ -1,0 +1,3 @@
+for i,v in pairs(game.Players:GetChildren()) do
+game.ReplicatedStorage.Event:FireServer("TPD", 100, game.Players[v.Name].Character.Humanoid)
+end

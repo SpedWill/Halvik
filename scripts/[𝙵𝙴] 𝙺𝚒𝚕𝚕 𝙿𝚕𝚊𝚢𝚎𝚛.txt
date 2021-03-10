@@ -1,0 +1,75 @@
+Victim = "" -- The player you want to kill
+
+--[[Doomspire Brickbattle FE Kill
+Please wait until you are able to move your character again.
+Exceptions:
+Player cannot be on your team
+Player cannot have a sword equipped
+]]
+
+looptp = false
+game:GetService("RunService").Stepped:connect(function()
+if looptp then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Victim].Character.HumanoidRootPart.CFrame
+wait(math.random(.1,.4))
+end
+end)
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local plr = game:GetService("Players").LocalPlayer.Character
+plr.Archivable = true
+Respawning = plr:Clone()
+Respawning.Parent = workspace
+workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+workspace.CurrentCamera.CameraSubject = workspace.Respawning
+plr.Head:FindFirstChildOfClass("Decal").Parent = game.Players.LocalPlayer
+plr.Head.Transparency = 1
+plr.Torso.Transparency = 1
+plr["Right Arm"].Transparency = 1
+plr["Left Arm"].Transparency = 1
+plr["Right Leg"].Transparency = 1
+plr["Left Leg"].Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Accessory")) then
+v.Parent = game.Players.LocalPlayer
+end
+end
+looptp = true
+game.Players.LocalPlayer.Backpack.Sword.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Sword.Handle.Transparency = 1
+AnimationId = "188632011"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(10)
+wait(math.random(2.25,2.75))
+looptp = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+Respawning:Destroy()
+h = game.Players.LocalPlayer.Character.Humanoid
+tracks = h:GetPlayingAnimationTracks()
+for _,x in pairs(tracks)
+do x:Stop()
+end
+game.Players.LocalPlayer.Character.Sword.Handle.Transparency = 0
+game.Players.LocalPlayer.Character.Sword.Parent = game.Players.LocalPlayer.Backpack
+plr.Head.Transparency = 0
+plr.Torso.Transparency = 0
+plr["Right Arm"].Transparency = 0
+plr["Left Arm"].Transparency = 0
+plr["Right Leg"].Transparency = 0
+plr["Left Leg"].Transparency = 0
+for i,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+    if (v:IsA("Accessory")) then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+    if (v:IsA("Decal")) then
+v.Parent = game.Players.LocalPlayer.Character.Head
+end
+end
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+game.Players.LocalPlayer.Character.Animate.Disabled = false

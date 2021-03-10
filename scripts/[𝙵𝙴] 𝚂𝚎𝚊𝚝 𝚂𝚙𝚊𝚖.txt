@@ -1,0 +1,57 @@
+Seat_Spam_Speed = 40
+Seat_Spam_Length = 4
+
+Seat_Spam_Speed_2 = Seat_Spam_Speed
+local Char = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+for i=1,Seat_Spam_Length*5 do
+Char.CFrame = CFrame.new(-10,7.5,52)
+if Seat_Spam_Speed >= 133 and Seat_Spam_Speed <= 149 then
+game:GetService("RunService").Stepped:wait()
+else
+if Seat_Spam_Speed_2 >= 150 then
+game:GetService("RunService").RenderStepped:wait()
+else
+wait(4/Seat_Spam_Speed)
+end
+end
+Char.CFrame = CFrame.new(-15,7.5,52)
+if Seat_Spam_Speed >= 133 and Seat_Spam_Speed <= 149 then
+game:GetService("RunService").Stepped:wait()
+else
+if Seat_Spam_Speed_2 >= 150 then
+game:GetService("RunService").RenderStepped:wait()
+else
+wait(4/Seat_Spam_Speed)
+end
+end
+Char.CFrame = CFrame.new(-20,7.5,52)
+if Seat_Spam_Speed >= 133 and Seat_Spam_Speed <= 149 then
+game:GetService("RunService").Stepped:wait()
+else
+if Seat_Spam_Speed_2 >= 150 then
+game:GetService("RunService").RenderStepped:wait()
+else
+wait(4/Seat_Spam_Speed)
+end
+end
+Char.CFrame = CFrame.new(-25,7.5,52)
+if Seat_Spam_Speed >= 133 and Seat_Spam_Speed <= 149 then
+game:GetService("RunService").Stepped:wait()
+else
+if Seat_Spam_Speed_2 >= 150 then
+game:GetService("RunService").RenderStepped:wait()
+else
+wait(4/Seat_Spam_Speed)
+end
+end
+Char.CFrame = CFrame.new(-30,7.5,52)
+if Seat_Spam_Speed >= 133 and Seat_Spam_Speed <= 149 then
+game:GetService("RunService").Stepped:wait()
+else
+if Seat_Spam_Speed_2 >= 150 then
+game:GetService("RunService").RenderStepped:wait()
+else
+wait(4/Seat_Spam_Speed)
+end
+end
+end

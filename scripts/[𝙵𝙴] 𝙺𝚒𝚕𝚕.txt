@@ -1,2 +1,0 @@
-local Victim = ""
-game.ReplicatedStorage.Event:FireServer("TPD", 100, game.Players[Victim].Character.Humanoid)

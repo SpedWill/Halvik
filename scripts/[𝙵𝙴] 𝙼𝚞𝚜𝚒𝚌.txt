@@ -1,3 +1,0 @@
-local Music = "384957631" -- Change to the ID you want
-
-game.ReplicatedStorage.Event:FireServer("PlayRadio", game.Players.LocalPlayer, Music)
